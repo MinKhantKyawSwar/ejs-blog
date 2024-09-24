@@ -1,0 +1,19 @@
+<%- include("../includes/head") %>
+<section class="p-details">
+  <div class="p-details-p">
+    <div class="p-header">
+      <h1>Premium Details</h1>
+      <a href="/admin/profile"
+        ><i class="fa-solid fa-backward-step" style="color: #fff"></i
+      ></a>
+    </div>
+    <p>customer_id : <span><%= customer_id%></span></p>
+    <p>Country: <span><%= country%></span></p>
+    <p>Postal Code :<span><%= postal_code%></span></p>
+    <p>Email: <span><%= email%></span></p>
+    <p>Name: <span><%= name%></span></p>
+    <p>Invoice Id : <span><%= invoice_id%></span></p>
+    <p>status: <span class="status"><%= status%></span></p>
+  </div>
+</section>
+<%- include("../includes/foot") %>

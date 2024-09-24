@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <nav>
+    <h1>
+      <a href="/">BLOG.io</a>
+    </h1>
+    <div class="right-side">
+      <% if(isLogin){ %>
+      <a href="/admin/create-post">Create Post</a>
+      <a href="/admin/profile"> Profile </a>
+      <form action="/logout" method="post">
+        <input hidden value="<%= csrfToken %>" name="_csrf" />
+        <button>Logout</button>
+      </form>
+      <% } else { %>
+      <a href="/register">Create a new Account</a>
+      <a href="/login">Login to existing Acoount</a>
+      <% } %>
+    </div>
+  </nav>
+  <body>

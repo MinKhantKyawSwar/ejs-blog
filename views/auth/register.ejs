@@ -1,0 +1,21 @@
+<%- include("../includes/head") %>
+<section class="mx-auto">
+    <h1 class="title">Register now!</h1>
+    <% if(errorMsg.length){  %>
+      <p class="msg-box"><%= errorMsg %></p>
+      <% }  %>
+    <form action="/register" method="post">
+  <input hidden value="<%= csrfToken %>" name="_csrf" />
+      <div>
+        <label for="email">Enter email</label>
+        <input type="text" id="email" name="email" value="<%= oldFormData.email %>"/>
+      </div>
+      <div>
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password" value="<%= oldFormData.password %>" />
+      </div>
+      <button>Create Account</button>
+    </form>
+  </section>
+</body>
+<%- include("../includes/foot") %>
